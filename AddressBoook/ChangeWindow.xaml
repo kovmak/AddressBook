@@ -1,0 +1,159 @@
+﻿<Window x:Class="AddressBoook.ChangeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AddressBoook"
+        mc:Ignorable="d"
+        Title="Edit Contact" 
+        Height="470" 
+        Width="350" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen"
+        Icon="Images/bookmark (Edit).png">
+    <Grid Background="#373737" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <Border 
+            Background="#303030" 
+            RenderTransformOrigin="0.5,0.5" 
+            Grid.RowSpan="3" 
+            Margin="165,0,0,36" Width="NaN" Height="NaN"/>
+        <Label
+            Margin="86,44,60,10" 
+            Content="Edit Contact" 
+            FontFamily="Bahnschrift Light"
+            FontWeight="Bold"
+            Foreground="Violet" 
+            Height="NaN" 
+            Width="NaN" 
+            FontSize="30"/>
+        <Label 
+            Margin="30,0,25,263" 
+            Content="Name:" 
+            FontFamily="Bahnschrift Light"
+            FontWeight="Bold"
+            Foreground="LightGray" 
+            Height="27" 
+            Width="300"
+            Grid.Row="1" FontSize="16"/>
+        <TextBox 
+            x:Name="usernameTextBox" 
+            Grid.Row="1" 
+            Background="DarkGray"
+            Foreground="#373737" 
+            Text="{Binding Fio, UpdateSourceTrigger=PropertyChanged}"
+            Margin="25,32,25,241" 
+            FontFamily="Bahnschrift Light" 
+            Padding="5,2.5,1,1"
+            Height="27" 
+            Width="300"
+            ToolTip="Ім'я" 
+            FontSize="16" Style="{DynamicResource TextBoxStyle}"/>
+        <Label 
+            Margin="30,59,20,214" 
+            Content="Telephone:" 
+            FontFamily="Bahnschrift Light"
+            FontWeight="Bold"
+            Foreground="LightGray" 
+            Height="27" 
+            Width="300"
+            Grid.Row="1" 
+            FontSize="16"/>
+        <TextBox  
+            x:Name="phoneNumber" 
+            Grid.Row="1" 
+            Background="DarkGray"
+            Foreground="#373737" 
+            Text="{Binding TelephoneNumber, UpdateSourceTrigger=PropertyChanged}"
+            PreviewTextInput="Telephone_PreviewTextInput"
+            Margin="25,86,25,187" 
+            FontFamily="Bahnschrift Light" 
+            Padding="5,2.5,1,1"
+            Height="27" 
+            Width="300"
+            ToolTip="Номер має виглядати так +380*********" 
+            FontSize="16" 
+            Style="{DynamicResource TextBoxStyle}"
+            TextChanged="Telephone_TextChanged"/>
+        <Label 
+            Margin="30,107,20,154" 
+            Content="Home:" 
+            FontFamily="Bahnschrift Light"
+            FontWeight="Bold"
+            Foreground="LightGray" 
+            Height="27" 
+            Width="300"
+            Grid.Row="1" FontSize="16"/>
+        <TextBox 
+            x:Name="homeTextBox" 
+            Grid.Row="1" 
+            Background="DarkGray"
+            Foreground="#373737" 
+            Text="{Binding Home, UpdateSourceTrigger=PropertyChanged}"
+            Margin="25,135,25,128" 
+            FontFamily="Bahnschrift Light" 
+            Padding="5,2.5,1,1"
+            Height="27" 
+            Width="300"
+            ToolTip="Адреса має виглядати так 'Номер будинку' + 'Назва вулиці'" 
+            FontSize="16" Style="{DynamicResource TextBoxStyle}"
+            PreviewTextInput="Home_PreviewTextInput"
+            TextChanged="Home_TextChanged"/>
+        <Label 
+            Margin="30,167,20,106" 
+            Content="Gmail:" 
+            FontFamily="Bahnschrift Light"
+            FontWeight="Bold"
+            Foreground="LightGray" 
+            Height="27" 
+            Width="300"
+            Grid.Row="1" FontSize="16"/>
+        <TextBox 
+            x:Name="gmailTextBox" 
+            Grid.Row="1" 
+            Background="DarkGray"
+            Foreground="#373737" 
+            Text="{Binding Gmail, UpdateSourceTrigger=PropertyChanged}"
+            Margin="25,194,25,79" 
+            FontFamily="Bahnschrift Light" 
+            Padding="5,2.5,1,1"
+            Height="27" 
+            Width="300"
+            ToolTip="Електронна пошта має виглядати так ******@****.**" 
+            FontSize="16" Style="{DynamicResource TextBoxStyle}"
+            PreviewTextInput="Gmail_PreviewTextInput"
+            TextChanged="Gmail_TextChanged"/>
+        <StackPanel 
+            Grid.Row="1"
+            Margin="0,264,0,0"
+            HorizontalAlignment="Center" 
+            Orientation="Horizontal"
+            Width="230"
+            RenderTransformOrigin="0.452,0.397" Height="NaN">
+            <Button   
+                Width="100" 
+                Margin="0,0,15,0"
+                Background="DarkGray" 
+                Foreground="#373737"
+                Content="Edit"
+                BorderThickness="0,0,0,0"
+                FontFamily="Bahnschrift Light" 
+                FontSize="16"
+                Command="{Binding ChangeConfirm}" Style="{DynamicResource CustomButtonStyle}"/>
+            <Button 
+                Width="100" 
+                Margin="10,0,0,0"
+                Background="DarkGray" 
+                Foreground="#373737"
+                Content="Cancel" 
+                Command="{Binding Cancel, UpdateSourceTrigger=PropertyChanged}"
+                BorderThickness="0,0,0,0"
+                FontFamily="Bahnschrift Light" 
+                FontSize="16" Style="{DynamicResource CustomButtonStyle}"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,86 @@
+﻿<Window x:Class="AddressBoook.SupportWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AddressBoook"
+        mc:Ignorable="d"
+        Title="Support" 
+        Height="470" 
+        Width="350" 
+        ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen"
+        Icon="Images/bookmark(Support).png">
+    <Grid Background="#373737" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="390"/>
+        </Grid.RowDefinitions>
+        <Border 
+            Background="#303030" 
+            RenderTransformOrigin="0.5,0.5" 
+            Grid.RowSpan="2" 
+            Margin="165,0,0,36" Width="NaN" Height="NaN"/>
+        <Label
+            Margin="115,44,92,10" 
+            Content="Support" 
+            FontFamily="Bahnschrift Light"
+            FontWeight="Bold"
+            Foreground="Violet" 
+            Height="NaN" 
+            Width="NaN" 
+            FontSize="30"/>
+        <Label 
+            Margin="20,10,0,167" 
+            Content="Кнопка Add - Додає новий контакт
+            &#x0a;Кнопка Edit - Редагує контакт
+            &#x0a;Для роботи кнопки виділіть контакт
+            &#x0a;Кнопка Delete - Видаляє контакт
+            &#x0a;Для роботи кнопки виділіть контакт
+            &#x0a;Обережно контакт видаляється миттєво
+            &#x0a;Кнопка Exit - Для виходу з програми
+            &#x0a;Пусте поле біля пошуку - Сам пошук
+            &#x0a;В програмі є сортування для його 
+            &#x0a;роботи натисніть на заголовок" 
+            FontFamily="Bahnschrift Light"
+            FontWeight="Bold"
+            Foreground="LightGray"
+            Grid.Row="1" FontSize="15"/>
+        <StackPanel 
+            Grid.Row="1"
+            Margin="0,228,0,126"
+            HorizontalAlignment="Center" 
+            Orientation="Horizontal"
+            Width="230"
+            RenderTransformOrigin="0.452,0.397" Height="NaN">
+            <Button   
+                Width="100" 
+                Margin="0,0,15,0"
+                Background="DarkGray" 
+                Foreground="#373737"
+                Content="Ok"
+                BorderThickness="0,0,0,0"
+                FontFamily="Bahnschrift Light" 
+                FontSize="16"
+                Click="CancelButton_Click" Style="{DynamicResource CustomButtonStyle}"/>
+            <Button 
+                Width="100" 
+                Margin="10,0,0,0"
+                Background="DarkGray" 
+                Foreground="#373737"
+                Content="Cancel" 
+                Command="{Binding Cancel, UpdateSourceTrigger=PropertyChanged}"
+                BorderThickness="0,0,0,0"
+                FontFamily="Bahnschrift Light" 
+                FontSize="16"
+                Click="CancelButton_Click" Style="{DynamicResource CustomButtonStyle}"/>
+        </StackPanel>
+        <Label 
+            Margin="85,270,60,75" 
+            Content="Gmail:  kovmak15@gmail.com&#x0a;    Телефон:  +380994537611" 
+            FontFamily="Bahnschrift Light"
+            FontWeight="Bold"
+            Foreground="LightGray"
+            Grid.Row="1" FontSize="12"/>
+    </Grid>
+</Window>

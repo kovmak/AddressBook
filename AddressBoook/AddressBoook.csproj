@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\AdressBook.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="agenda1.png" />
+    <None Remove="bookmark %281%29.png" />
+    <None Remove="bookmark %283%29.png" />
+    <None Remove="bookmark.png" />
+    <None Remove="Exit.png" />
+    <None Remove="Images\Book.png" />
+    <None Remove="Images\bookmark %28+%29.png" />
+    <None Remove="Images\bookmark %28Edit%29.png" />
+    <None Remove="Images\bookmark%28Support%29.png" />
+    <None Remove="Images\Login.png" />
+    <None Remove="Images\Magnifier.png" />
+    <None Remove="Images\Search.png" />
+    <None Remove="Search.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\AdressBook.ico" />
+    <Content Include="Images\bookmark (+).png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\bookmark (Edit).png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\bookmark(Support).png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Login.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NPOI" Version="2.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\Search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
