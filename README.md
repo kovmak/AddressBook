@@ -63,4 +63,5 @@ Contributions are welcome! Please follow these steps:
 5. Submit a pull request.
 
 ## License
-[MIT License](LICENSE)
+
+This project is licensed under the [MIT License](LICENSE).
